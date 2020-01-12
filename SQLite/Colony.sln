@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinook", "Chinook\Chinook.csproj", "{77836142-3C8D-412F-A037-E4928D05C83E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colony", "EF_Test\Colony.csproj", "{AA5384DD-6029-46DD-8744-50A13A794FC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{77836142-3C8D-412F-A037-E4928D05C83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77836142-3C8D-412F-A037-E4928D05C83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77836142-3C8D-412F-A037-E4928D05C83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77836142-3C8D-412F-A037-E4928D05C83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA5384DD-6029-46DD-8744-50A13A794FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA5384DD-6029-46DD-8744-50A13A794FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA5384DD-6029-46DD-8744-50A13A794FC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA5384DD-6029-46DD-8744-50A13A794FC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {B5E54F84-88F1-4271-8665-C6583F04AB5B}
+		SolutionGuid = {ADFC1C8E-B9BB-446E-A60C-ACD3C2D68E85}
 	EndGlobalSection
 EndGlobal
