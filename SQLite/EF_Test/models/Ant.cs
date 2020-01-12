@@ -11,6 +11,8 @@ namespace Colony.models
         public int AgeInDays { get; set; }
         public string FavoriteAntGame { get; set; }
 
+        public virtual IList<AntHiveRelation> Hives { get; set; } = new List<AntHiveRelation>();
+
         public override string ToString()
         {
             return $"Ant {Id}: {Name} is {AgeInDays} days old and loves {FavoriteAntGame}.";

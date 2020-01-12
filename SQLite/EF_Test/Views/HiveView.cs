@@ -47,7 +47,7 @@ namespace Colony.Views
                 Console.WriteLine($" => owned by queen {hive.Queen.Name}");
                 Console.WriteLine($" => has {hive.Ants.Count} ants");
 
-                ListView.Print(hive.Ants, "    => ");
+                ListView.PrintAnts(hive.Ants, "    => ");
                 Console.WriteLine();
             });
         }

@@ -12,6 +12,7 @@ namespace Colony
     {
         static void Main(string[] args)
         {
+            // Context.Get.Database.EnsureDeleted();
             Context.Get.Database.EnsureCreated();
 
             var menu = new SMUtils.Menu();
@@ -21,7 +22,24 @@ namespace Colony
             menu.AddOption('3', "Add Hive", AddHive);
             menu.AddOption('4', "View Hives", ViewHives);
             menu.AddOption('5', "Add Ant", AddAnt);
+            menu.AddOption('6', "Add Ant To Hive", AddAntToHive);
+            menu.AddOption('7', "View Ants", ViewAnts); 
             menu.Start();
+        }
+
+        private async static void ViewAnts()
+        {
+            await AntView.List();
+        }
+
+        private async static void AddAntToHive()
+        {
+            var ant = await AntView.Select();
+            if (ant != null)
+            {
+                await AntView.AddToHive(ant);
+                Context.Save();
+            }
         }
 
         private async static void AddAnt()
@@ -38,7 +56,7 @@ namespace Colony
             var selectedHive = Context.Get.Hives.Find(hiveID);
             if (selectedHive != null)
             {
-                selectedHive.Ants.Add(ant);
+                selectedHive.Ants.Add(new AntHiveRelation(ant, selectedHive));
             }
             Context.Save();
         }

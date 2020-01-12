@@ -38,8 +38,14 @@ namespace Colony
             instance.SaveChanges();
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AntHiveRelation>().HasKey(antHive => new { antHive.AntId, antHive.HiveId });
+        }
+
         public DbSet<Ant> Ants { get; set; }
         public DbSet<Hive> Hives { get; set; }
         public DbSet<Queen> Queens { get; set; }
+        public DbSet<AntHiveRelation> AntHives { get; set; }
     }
 }

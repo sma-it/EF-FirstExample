@@ -9,7 +9,7 @@ namespace Colony.models
         public int Id { get; set; }
         public string Name { get; set; }
         public virtual Queen Queen { get; set; }
-        public virtual IList<Ant> Ants { get; set; } = new List<Ant>();
+        public virtual IList<AntHiveRelation> Ants { get; set; } = new List<AntHiveRelation>();
 
         public override string ToString()
         {
