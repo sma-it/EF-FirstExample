@@ -1,4 +1,5 @@
 ﻿using Colony.models;
+using Colony.SysLog;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace Colony
 
         ~Context()
         {
+            Log.GetInstance().AddDebug("Disposing Context");
             Dispose();
         }
 
@@ -23,11 +25,13 @@ namespace Colony
             {
                 if (instance == null)
                 {
+                    Log.GetInstance().AddDebug("Creating Context");
                     var optionsBuilder = new DbContextOptionsBuilder<Context>();
                     optionsBuilder
                         .UseLazyLoadingProxies()
                         .UseSqlite(@"Data Source=AntsDB.db;");
                     instance = new Context(optionsBuilder.Options);
+                    Log.GetInstance().AddDebug("Context Created");
                 }
                 return instance;
             }
@@ -35,12 +39,15 @@ namespace Colony
 
         public static void Save()
         {
+            Log.GetInstance().AddDebug("Saving Context");
             instance.SaveChanges();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            Log.GetInstance().AddDebug("Enter OnModelCreating");
             modelBuilder.Entity<AntHiveRelation>().HasKey(antHive => new { antHive.AntId, antHive.HiveId });
+            Log.GetInstance().AddDebug("Exit OnModelCreating");
         }
 
         public DbSet<Ant> Ants { get; set; }
